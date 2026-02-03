@@ -1,0 +1,105 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-02-03T12:00:00Z",
+  "description": "ITD+ Modules Manifest - defines which modules to load and their versions",
+  
+  "critical": [
+    "BlacklistModule.js",
+    "VerifiedModule.js",
+    "BannerModule.js"
+  ],
+  
+  "lazy": [
+    "SettingsTabMain.js",
+    "SettingsTabBlacklist.js",
+    "SettingsTabUpdates.js",
+    "MentionsModule.js",
+    "PrivacyModule.js"
+  ],
+  
+  "modules": {
+    "BlacklistModule.js": {
+      "enabled": true,
+      "version": "1.2.3",
+      "hash": "abc123def456",
+      "description": "Core blacklist functionality - filters posts and users",
+      "loadType": "critical",
+      "dependencies": []
+    },
+    
+    "VerifiedModule.js": {
+      "enabled": true,
+      "version": "1.0.5",
+      "hash": "verified789",
+      "description": "Verified badge enhancements",
+      "loadType": "critical",
+      "dependencies": []
+    },
+    
+    "BannerModule.js": {
+      "enabled": true,
+      "version": "2.1.0",
+      "hash": "banner456",
+      "description": "Profile banner customization",
+      "loadType": "critical",
+      "dependencies": []
+    },
+    
+    "SettingsTabMain.js": {
+      "enabled": true,
+      "version": "1.5.0",
+      "hash": "settings_main_v15",
+      "description": "Main settings tab UI",
+      "loadType": "lazy",
+      "dependencies": []
+    },
+    
+    "SettingsTabBlacklist.js": {
+      "enabled": true,
+      "version": "1.4.2",
+      "hash": "settings_bl_v142",
+      "description": "Blacklist management UI",
+      "loadType": "lazy",
+      "dependencies": ["BlacklistModule.js"]
+    },
+    
+    "SettingsTabUpdates.js": {
+      "enabled": true,
+      "version": "1.1.0",
+      "hash": "settings_upd_v11",
+      "description": "Updates tab showing version info and changelogs",
+      "loadType": "lazy",
+      "dependencies": []
+    },
+    
+    "MentionsModule.js": {
+      "enabled": true,
+      "version": "1.3.1",
+      "hash": "mentions131",
+      "description": "Enhanced mentions and notifications",
+      "loadType": "lazy",
+      "dependencies": []
+    },
+    
+    "PrivacyModule.js": {
+      "enabled": true,
+      "version": "1.2.0",
+      "hash": "privacy120",
+      "description": "Privacy features and invisible mode",
+      "loadType": "lazy",
+      "dependencies": []
+    }
+  },
+  
+  "deprecated": [
+    "OldModule.js"
+  ],
+  
+  "notes": [
+    "Critical modules are loaded immediately on script start",
+    "Lazy modules are loaded on-demand when needed",
+    "Set enabled: false to disable a module without removing it",
+    "Update version or hash to force module reload for all users",
+    "Modules not listed here will not be loaded even if they exist"
+  ]
+}
